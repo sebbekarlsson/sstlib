@@ -3,6 +3,7 @@
 #include <setjmp.h>
 #include <cmocka.h>
 #include "../includes/ss_vector.h"
+#include "../includes/ss_strutils.h"
 
 
 typedef struct APPLE_STRUCT {
@@ -32,10 +33,23 @@ static void ss_vector_test_success(void **state){
     ss_vector_free(vector);
 }
 
+static void ss_strutils_test_success(void **state) {
+    char* int_str0 = "-16";
+    char* int_str1 = "+16";
+    char* int_str2 = "16";
+    char* int_str3 = "abc16";
+
+    assert_int_equal(ss_is_int(int_str0), 1);
+    assert_int_equal(ss_is_int(int_str1), 1);
+    assert_int_equal(ss_is_int(int_str2), 1);
+    assert_int_equal(ss_is_int(int_str3), 0);
+}
+
 
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(ss_vector_test_success),
+        cmocka_unit_test(ss_strutils_test_success),
     };
     return cmocka_run_group_tests(tests, NULL, NULL);
 }

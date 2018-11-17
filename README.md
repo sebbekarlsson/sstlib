@@ -45,6 +45,17 @@
 > TODO:
 * add method for removing item from vector
 
+## ss\_is\_int
+> Check if string is int:
+
+    #include <sstlib/ss_strutils.h> // string utils
+
+    ..
+    ss_is_int("-16") // 1
+    ss_is_int("+16") // 1
+    ss_is_int("abc16") // 0
+    ..
+
 ## More coming soon
 > More stuff will be added to this library soon.
 
