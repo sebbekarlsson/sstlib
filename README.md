@@ -23,9 +23,7 @@
 
 
     int main(int argc, char* argv[]) {
-        apple* a = init_apple(0); // hack - temp pointer to use later
-        ss_vector* vector = ss_init_vector(a);
-        free(a); // hack - free the temp pointer
+        ss_vector* vector = ss_init_vector(sizeof(apple));
 
         for (int i = 0; i < 10; i++)
             ss_vector_append(vector, init_apple(i));
