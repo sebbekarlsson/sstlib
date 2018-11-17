@@ -19,9 +19,7 @@ apple* init_apple(int id) {
 
 
 static void ss_vector_test_success(void **state){
-    apple* a = init_apple(0);
-    ss_vector* vector = ss_init_vector(a);
-    free(a);
+    ss_vector* vector = ss_init_vector(sizeof(apple));
 
     for (int i = 0; i < 10; i++)
         ss_vector_append(vector, init_apple(i));
