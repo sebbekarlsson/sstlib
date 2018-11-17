@@ -1,3 +1,5 @@
+<div align='center'><img width='128px' src='image.gif'/></div>
+
 # Sebastians Standard Library
 > Metal af C standard library for divine intellects.
 
